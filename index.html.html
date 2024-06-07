@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta cuisine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 1em 0;
+        }
+        nav a {
+            margin: 0 1em;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        section {
+            padding: 1em;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 1em;
+            right: 1em;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            height: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .chatbot-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .chatbot-input {
+            width: calc(100% - 20px);
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delta cuisine/h1>
+    </header>
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#products">Produits</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>À propos de nous</h2>
+        <p>Bienvenue chez Delta cuisine. Nous offrons les meilleurs meubles pour votre cuisine, alliant design et fonctionnalité.</p>
+    </section>
+    <section id="products">
+        <h2>Nos Produits</h2>
+        <p>Découvrez notre gamme de meubles de cuisine, conçus pour améliorer votre espace de vie.</p>
+    </section>
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour plus d'informations, veuillez nous contacter via notre formulaire ou par téléphone.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Delta Cuisine. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Chatbot container -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <strong>Agent Intelligent</strong>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <!-- Messages will be inserted here -->
+        </div>
+        <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Tapez un message..." />
+    </div>
+
+    <!-- Button to toggle chatbot visibility -->
+    <button onclick="toggleChatbot()" style="position: fixed; bottom: 1em; right: 1em;">Chat</button>
+
+    <!-- Script for the chatbot integration -->
+    <script>
+        function toggleChatbot() {
+            var chatbot = document.getElementById('chatbot');
+            if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+                chatbot.style.display = 'block';
+            } else {
+                chatbot.style.display = 'none';
+            }
+        }
+
+        document.getElementById('chatbot-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                var input = e.target.value;
+                e.target.value = '';
+                addMessage('Vous', input);
+                getResponse(input);
+            }
+        });
+
+        function addMessage(sender, text) {
+            var messageContainer = document.createElement('div');
+            messageContainer.textContent = sender + ': ' + text;
+            document.getElementById('chatbot-messages').appendChild(messageContainer);
+        }
+
+        function getResponse(input) {
+       
+
+        <!-- Element that opens the widget on click. It does not have to be an input -->
+        <input placeholder="Saisissez votre recherche ici" id="searchWidgetTrigger" />
+            setTimeout(function() {
+                addMessage('Agent', 'Je suis désolé, je ne peux pas comprendre cela pour l\'instant.');
+            }, 1000);
+        }
+        function getResponse(input) {
+        <!-- Widget JavaScript bundle -->
+        <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=fr"></script>
+
+        <!-- Search widget element is not visible by default -->
+        <gen-search-widget
+        configId="52747a74-f7c0-4118-9678-668669b4a387"
+        triggerId="searchWidgetTrigger">
+        </gen-search-widget>
+
+        <!-- Element that opens the widget on click. It does not have to be an input -->
+        <input placeholder="Saisissez votre recherche ici" id="searchWidgetTrigger" />
+        }
+    </script>
+</body>
+</html>
